@@ -6,7 +6,6 @@
 
 	home.packages = with pkgs; [
 		htop
-		firefox
 		spotify
 		waybar
 		nix-search-cli
@@ -109,6 +108,15 @@
 				"$mod, F, exec, rofi -show run"
 				"$mod, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
 			];
+		};
+	};
+
+	programs.firefox = {
+		enable = true;
+		profiles.mtburge = {
+			settings = {
+				"extensions.activeThemeID" = "firefox-compact-dark@mozilla.org";
+			};
 		};
 	};
 
