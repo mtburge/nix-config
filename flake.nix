@@ -12,9 +12,14 @@
 		hyprland.url = "github:hyprwm/Hyprland";
 	
 		nixsearch.url = "github:peterldowns/nix-search-cli";
+
+		firefox-addons = {
+			url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
 	};
 
-	outputs = { self, nixpkgs, home-manager, hyprland, ...} : {
+	outputs = { self, nixpkgs, home-manager, hyprland, ...} @inputs : {
 		imports = [hyprland.homeManagerModules.default];
 
 		nixosConfigurations.elara = nixpkgs.lib.nixosSystem {

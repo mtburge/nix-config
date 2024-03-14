@@ -114,10 +114,26 @@
 	programs.firefox = {
 		enable = true;
 		profiles.mtburge = {
+			#extensions = with pkgs.inputs.firefox-addons; [
+			#	1password
+			#];
 			settings = {
 				"extensions.activeThemeID" = "firefox-compact-dark@mozilla.org";
 			};
 		};
+	};
+
+	programs.vim = {
+		enable = true;
+		extraConfig = ''
+			set autoindent
+			set smartindent
+			set smarttab
+			set shiftwidth=2
+			set softtabstop=2
+			set tabstop=2
+			set expandtab
+		'';
 	};
 
 	home.stateVersion = "23.11";
