@@ -60,7 +60,7 @@
 			exec-once = [
 				"firefox"
 				"waybar"
-				"1password &"
+				"1password --silent"
 				"wl-paste --type text --watch cliphist store"
 				"wl-paste --type image --watch cliphist store"
 			];
