@@ -34,6 +34,6 @@
 					home-manager.users.mtburge = import ./home/home.nix;
 				}
 			];
-		};
+    };
 	};
 }

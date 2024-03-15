@@ -9,15 +9,21 @@
 		spotify
 		waybar
 		nix-search-cli
-	];
+    tree
+    hyprpaper
+  ];
 
-	home.file = {
-		".config/electron-flags.conf" = {
-			text = ''--enable-features=UseOzonePlatform
---ozone-platform=wayland
-			'';
-		};
-	};
+	home.file.".config/electron-flags.conf".text = ''
+    --enable-features=UseOzonePlatform
+    --ozone-platform=wayland
+	'';
+
+  home.file.".config/hypr/hyprpaper.conf".text = ''
+    preload = ~/.dotfiles/wallpaper.jpg
+    wallpaper = ,~/.dotfiles/wallpaper.jpg
+    splash = true
+    ipc = off
+  '';
 
 	programs.home-manager.enable = true;
 
@@ -59,7 +65,8 @@
 			exec-once = [
 				"firefox"
 				"waybar"
-				"1password --silent"
+        "1password --silent"
+        "hyprpaper"
 				"wl-paste --type text --watch cliphist store"
 				"wl-paste --type image --watch cliphist store"
 			];
@@ -69,7 +76,11 @@
 				kb_variant = "mac";
 				kb_options = "caps:escape";
 				follow_mouse=1;
-			};
+      };
+
+      misc = {
+        disable_hyprland_logo = true;
+      };
 			
 			general = {
 				gaps_in=5;
