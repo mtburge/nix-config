@@ -1,29 +1,37 @@
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, user, system, ... }:
 
 {
   imports =
     [
-      ./hardware-configuration.nix
+      ../../system/hardware/configuration.nix
+      ../../system/hardware/opengl.nix
+      ../../system/hardware/zram.nix
+      
+      ../../system/security/firewall.nix
+
+      ../../system/de/hyprland.nix
+
+      ../../system/app/1password.nix
+      ../../system/common.nix
     ];
 
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  #nix.settings.experimental-features = ["nix-command" "flakes"];
 
   # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.grub.device = "/dev/nvme0n1p1";
+  #boot.loader.systemd-boot.enable = true;
+  #boot.loader.efi.canTouchEfiVariables = true;
+  #boot.loader.grub.device = "/dev/nvme0n1p1";
 
   networking.hostName = "elara";
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   # networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
 
-  time.timeZone = "Europe/London";
+  #time.timeZone = "Europe/London";
 
   # Select internationalisation properties.
- i18n.defaultLocale = "en_GB.UTF-8";
- console = {
-};
+ #i18n.defaultLocale = "en_GB.UTF-8";
+ #console = {};
 
   # Enable the X11 windowing system.
   #services.xserver.xkb.layout = "gb";
@@ -45,41 +53,36 @@
   # sound.enable = true;
   # hardware.pulseaudio.enable = true;
 
-	hardware.opengl = {
-		enable = true;
-		driSupport = true;
-		driSupport32Bit = true;
-	};
 
-  users.groups.mtburge = {};
-  users.users.mtburge = {
+  users.groups.${user.username} = {};
+  users.users.${user.username} = {
     isNormalUser = true;
-    group = "mtburge";
+    group = user.username;
     extraGroups = [ "wheel" ];
   };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    vim
-    kitty
-    neofetch
-    git
+  environment.systemPackages = with pkgs; [];
+    #vim
+    #kitty
+    #neofetch
+    #git
 
+  #home-manager
 	
-	_1password
-	_1password-gui 
-	cliphist 
-];
+  #_1password
+  #_1password-gui
+  #cliphist 
 
-programs._1password = {
-	enable = true;
-};
+#programs._1password = {
+#	enable = true;
+#};
 
-programs._1password-gui = {
-	enable = true;
-	polkitPolicyOwners = ["mtburge"];
-};
+#programs._1password-gui = {
+#	enable = true;
+#	polkitPolicyOwners = ["mtburge"];
+#};
 
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -99,19 +102,19 @@ programs._1password-gui = {
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
-  networking.firewall.enable = true;
+  #networking.firewall.enable = true;
 
   system.stateVersion = "23.11"; # Did you read the comment?
 
-	environment.sessionVariables = {
-		EDITOR="vim";
-	};
+  #environment.sessionVariables = {
+  #	EDITOR="vim";
+  #};
 
-	zramSwap.enable = true;
+  #zramSwap.enable = true;
 
-	programs.hyprland = {
-		enable = true;
-		xwayland.enable = true;
-	};
+  #programs.hyprland = {
+  #	enable = true;
+  #	xwayland.enable = true;
+  #};
 }
 

@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, user, system, ... }:
 
 {
 	home.username = "mtburge";
@@ -19,8 +19,8 @@
 	'';
 
   home.file.".config/hypr/hyprpaper.conf".text = ''
-    preload = ~/.dotfiles/wallpaper.jpg
-    wallpaper = ,~/.dotfiles/wallpaper.jpg
+    preload = ~/.dotfiles/workspaces/${system.workspace}/wallpaper.jpg
+    wallpaper = ,~/.dotfiles/workspaces/${system.workspace}/wallpaper.jpg
     splash = true
     ipc = off
   '';
