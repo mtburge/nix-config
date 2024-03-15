@@ -7,7 +7,7 @@
       system = {
         arch = "x86_64-linux";
         hostname = "elara";
-        workspace = "desktop";
+        workspace = "personal";
         timezone = "Europe/London";
         locale = "en_GB.UTF-8";
       };
@@ -35,7 +35,7 @@
       elara = nixpkgs.lib.nixosSystem {
         system = system.arch;
         modules = [
-          (./. + "/workspaces" + ("/" + system.workspace) + "/configuration.nix")
+          (./. + "/profiles" + ("/" + system.workspace) + "/configuration.nix")
         ];
         specialArgs = {
           inherit pkgs;
@@ -48,7 +48,7 @@
 	homeConfigurations = {
 		mtburge = home-manager.lib.homeManagerConfiguration {
 			inherit pkgs;
-			modules = [ (./. + "/workspaces" + ("/" + system.workspace) + "/home.nix") ];
+			modules = [ (./. + "/profiles" + ("/" + system.workspace) + "/home.nix") ];
 			extraSpecialArgs = {
 				inherit system;
 				inherit user;
