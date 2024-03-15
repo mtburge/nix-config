@@ -36,7 +36,6 @@
         system = system.arch;
         modules = [
           (./. + "/workspaces" + ("/" + system.workspace) + "/configuration.nix")
-          #./system/configuration.nix
         ];
         specialArgs = {
           inherit pkgs;
