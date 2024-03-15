@@ -26,8 +26,13 @@
 
   environment.systemPackages = with pkgs; [];
 
-  networking.firewall.allowedTCPPorts = [ 57621 ];
-  networking.firewall.allowedUDPPorts = [ 5353 ];
+  networking.firewall.allowedTCPPorts = [
+    57621 #spotify
+  ];
+  
+  networking.firewall.allowedUDPPorts = [
+    5353 #spotify
+  ];
 
   system.stateVersion = "23.11";
 }
