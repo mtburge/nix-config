@@ -9,10 +9,9 @@
     ../../system/security/firewall.nix
     ../../system/security/polkit.nix
     
-    #../../system/de/hyprland.nix
+    ../../system/misc/common.nix
 
-    ../../system/app/1password.nix
-    ../../system/common.nix
+    ../../system/apps/1password.nix
   ];
 
   users.groups.${user.username} = {};

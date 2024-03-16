@@ -2,16 +2,15 @@
 
 {
   imports = [
-    ../../user/de/hyprland.nix
-    ../../user/de/waybar.nix
-    ../../user/de/hyprpaper.nix
-    ../../user/de/theme.nix
-    ../../user/de/notify.nix
-
-    ../../user/app/browser/electron.nix
-    ../../user/app/browser/firefox.nix
-    ../../user/app/git/git.nix
-    ../../user/app/editor/vim.nix
+    ../../user/dunst
+    ../../user/electron
+    ../../user/firefox
+    ../../user/git
+    ../../user/gtk
+    ../../user/hyprland
+    ../../user/hyprpaper
+    ../../user/vim
+    ../../user/waybar
   ];
 
   home.username = user.username;
