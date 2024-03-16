@@ -2,7 +2,6 @@
 
 {
   imports = [
-    ../../system/hardware/configuration.nix
     ../../system/hardware/opengl.nix
     ../../system/hardware/zram.nix
 
