@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
 {
   home.pointerCursor = {
@@ -13,6 +13,11 @@
       color-scheme = "prefer-dark";
     };
   };
+
+  home.packages = with pkgs; [
+    qt5.qtwayland
+    qt6.qtwayland
+  ];
 
   gtk = {
     enable = true;

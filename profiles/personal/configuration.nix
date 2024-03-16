@@ -4,9 +4,11 @@
   imports = [
     ../../system/hardware/opengl.nix
     ../../system/hardware/zram.nix
+    ../../system/hardware/media.nix
 
     ../../system/security/firewall.nix
-
+    ../../system/security/polkit.nix
+    
     ../../system/de/hyprland.nix
 
     ../../system/app/1password.nix
