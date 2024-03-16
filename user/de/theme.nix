@@ -2,9 +2,16 @@
 
 {
   home.packages = with pkgs; [
-    #pkgs.fantasque-sans-mono
-    pkgs.fira-code
-    pkgs.fira-code-symbols
+    fira-code
+    fira-code-symbols
+
+    monaspace
+    jetbrains-mono
+
+    pkgs.nerdfonts
+    (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono"]; })
+    pkgs.noto-fonts-emoji
+
     qt5.qtwayland
     qt6.qtwayland
   ];
@@ -26,19 +33,40 @@
 
   gtk = {
     enable = true;
+    
     theme = {
-      package = pkgs.flat-remix-gtk;
-      name = "Flat-Reminx-GTK-Grey-Darkest";
+      package = pkgs.catppuccin-gtk.override {
+        accents = [ "lavender" ];
+        size = "compact";
+        tweaks = [];
+        variant = "mocha";
+      };
+      name = "Catppuccin-Mocha-Standard-Lavender-Dark";
+    };
+
+    cursorTheme = {
+      name = "Bibata-Modern-Ice";
+      package = pkgs.bibata-cursors;
+      size = 24;
+    };
+
+    gtk4.extraConfig = {
+      gtk-application-prefer-dark-theme = 1;
     };
 
     iconTheme = {
-      package = pkgs.gnome.adwaita-icon-theme;
+      package = pkgs.catppuccin-papirus-folders.override {
+        flavor = "mocha";
+        accent = "lavender";
+      };
       name = "Adawaita";
     };
 
-    #font = {
-    #  name = "Monospace";
-    #  size = 11;
-    #};
+    font = {
+      #name = "JetBrainsMono Nerd Font";
+      #name = "Monaspace Argon Medium";
+      name = "Jetbrains Mono";
+      size = 11;
+    };
   };
 }

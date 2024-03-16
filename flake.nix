@@ -16,6 +16,7 @@
         username = "mtburge";
         name = "Matt Burgess";
         email = "hey@mtburge.com";
+        wallpaper = "~/.dotfiles/wallpapers/skipping-stones.png";
       };
       
       pkgs = import nixpkgs {

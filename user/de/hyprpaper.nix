@@ -6,9 +6,9 @@
   ];
 
   home.file.".config/hypr/hyprpaper.conf".text = ''
-    preload = ~/.dotfiles/profiles/${system.profile}/wallpaper.jpg
-    wallpaper = ,~/.dotfiles/profiles/${system.profile}/wallpaper.jpg
-    splash = true
+    preload = ${user.wallpaper}
+    wallpaper = ,${user.wallpaper}
+    splash = false
     ipc = off
   '';
 }
