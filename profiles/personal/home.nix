@@ -8,7 +8,6 @@
     ../../user/git
     ../../user/gtk
     ../../user/hyprland
-    ../../user/hyprpaper
     ../../user/vim
     ../../user/waybar
   ];
