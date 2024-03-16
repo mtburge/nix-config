@@ -1,35 +1,35 @@
 {
-	description = "Matt's config";
+  description = "Matt's config";
 
   outputs = { self, nixpkgs, home-manager, hyprland, nur, ...} @ inputs:
 
-    let
-      system = {
-        arch = "x86_64-linux";
-        hostname = "elara";
-        profile = "personal";
-        timezone = "Europe/London";
-        locale = "en_GB.UTF-8";
-      };
+  let
+    system = {
+      arch = "x86_64-linux";
+      hostname = "elara";
+      profile = "personal";
+      timezone = "Europe/London";
+      locale = "en_GB.UTF-8";
+    };
 
-      user = {
-        username = "mtburge";
-        name = "Matt Burgess";
-        email = "hey@mtburge.com";
-        wallpaper = "~/.dotfiles/wallpapers/skipping-stones.png";
+    user = {
+      username = "mtburge";
+      name = "Matt Burgess";
+      email = "hey@mtburge.com";
+      wallpaper = "~/.dotfiles/wallpapers/skipping-stones.png";
+    };
+
+    pkgs = import nixpkgs {
+      system = system.arch;
+      config = {
+        allowUnfree = true;
+        allowUnfreePredicate = (_: true);
       };
-      
-      pkgs = import nixpkgs {
-        system = system.arch;
-        config = {
-          allowUnfree = true;
-          allowUnfreePredicate = (_: true);
-        };
-      };
-      
-      imports = [
-        hyprland.homeManagerModules.default
-      ];
+    };
+
+    imports = [
+      hyprland.homeManagerModules.default
+    ];
 
   in {
     nixosConfigurations = {
@@ -45,31 +45,31 @@
       };
     };
 
-	homeConfigurations = {
-		${user.username} = home-manager.lib.homeManagerConfiguration {
-      inherit pkgs;
+    homeConfigurations = {
+      ${user.username} = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
 
-      modules = [
-        nur.nixosModules.nur
-        (./. + "/profiles" + ("/" + system.profile) + "/home.nix")
-      ];
+        modules = [
+          nur.nixosModules.nur
+          (./. + "/profiles" + ("/" + system.profile) + "/home.nix")
+        ];
 
-			extraSpecialArgs = {
-        inherit inputs system user;
-			};
+        extraSpecialArgs = {
+          inherit inputs system user;
+        };
+      };
     };
-	};
   };
 
   inputs = {
-		nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
     hyprland.url = "github:hyprwm/Hyprland";
     nixsearch.url = "github:peterldowns/nix-search-cli";
     nur.url = "github:nix-community/NUR";
 
-		home-manager = {
-			url = "github:nix-community/home-manager/release-23.11";
-			inputs.nixpkgs.follows = "nixpkgs";
-		};
-	};
+    home-manager = {
+      url = "github:nix-community/home-manager/release-23.11";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+  };
 }
