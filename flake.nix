@@ -24,13 +24,8 @@
           allowUnfree = true;
           allowUnfreePredicate = (_: true);
         };
-        packageOverrides = pkgs: {
-          nur = import (builtins.fetchTarball "https://github.com/nix-community/NUR/archive/master.tar.gz") {
-            inherit pkgs;
-          };
-        };
       };
-
+      
       imports = [
         hyprland.homeManagerModules.default
       ];
@@ -40,6 +35,7 @@
       ${system.hostname} = nixpkgs.lib.nixosSystem {
         system = system.arch;
         modules = [
+          nur.nixosModules.nur
           (./. + "/machines" + ("/" + system.hostname) + ".nix")
         ];
         specialArgs = {
@@ -55,6 +51,7 @@
       inherit pkgs;
 
       modules = [
+        nur.nixosModules.nur
         (./. + "/profiles" + ("/" + system.profile) + "/home.nix")
       ];
 
@@ -69,6 +66,7 @@
 		nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
     hyprland.url = "github:hyprwm/Hyprland";
     nixsearch.url = "github:peterldowns/nix-search-cli";
+    nur.url = "github:nix-community/NUR";
 
 		home-manager = {
 			url = "github:nix-community/home-manager/release-23.11";

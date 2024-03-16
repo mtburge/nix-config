@@ -6,8 +6,8 @@
   ];
 
   home.file.".config/hypr/hyprpaper.conf".text = ''
-    preload = ~/.dotfiles/workspaces/${system.workspace}/wallpaper.jpg
-    wallpaper = ,~/.dotfiles/workspaces/${system.workspace}/wallpaper.jpg
+    preload = ~/.dotfiles/profiles/${system.profile}/wallpaper.jpg
+    wallpaper = ,~/.dotfiles/profiles/${system.profile}/wallpaper.jpg
     splash = true
     ipc = off
   '';
