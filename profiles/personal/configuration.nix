@@ -13,9 +13,6 @@
     ../../system/common.nix
   ];
 
-
-  networking.hostName = "elara";
-
   users.groups.${user.username} = {};
   users.users.${user.username} = {
     isNormalUser = true;

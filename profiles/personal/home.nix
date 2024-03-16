@@ -5,7 +5,8 @@
     ../../user/de/hyprland.nix
     ../../user/de/waybar.nix
     ../../user/de/hyprpaper.nix
-    ../../user/de/cursor.nix
+    ../../user/de/theme.nix
+    ../../user/de/notify.nix
 
     ../../user/app/browser/electron.nix
     ../../user/app/browser/firefox.nix

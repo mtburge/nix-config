@@ -19,7 +19,8 @@
 			
 			exec-once = [
 				"firefox"
-				"waybar"
+        "dunst"
+        "waybar"
         "1password --silent"
         "hyprpaper"
 				"wl-paste --type text --watch cliphist store"

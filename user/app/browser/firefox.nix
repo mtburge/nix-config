@@ -6,10 +6,10 @@
     
     profiles.${user.username} = {
       settings = {
-        "browser.startup.page" = "3"; # resume last session
+        "browser.startup.page" = "0"; # always open on new tab
         "browser.newtabpage.activity-stream.showSponsoredTopSites" = false; # disable sponsored sites
         "browser.urlbar.suggest.quicksuggest.sponsored" = false; # don't suggest sponsored links
-        "signon.autofillForms" = false; # disable password manager
+        #"signon.autofillForms" = false; # disable password manager
         "extensions.activeThemeID" = "firefox-compact-dark@mozilla.org"; # dark theme
       };
       

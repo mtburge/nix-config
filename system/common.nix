@@ -3,6 +3,9 @@
 {
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
+  # networking
+  networking.hostName = system.hostname;
+
   # i18n
   time.timeZone = system.timezone;
   i18n.defaultLocale = system.locale;
