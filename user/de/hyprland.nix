@@ -1,9 +1,11 @@
-{ config, pkgs, ... }:
+{ inputs, config, pkgs, ... }:
 
 {
   wayland.windowManager.hyprland = {
-		enable = true;
-    
+    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+    enable = true;
+    xwayland.enable = true;
+
     settings = {
 			monitor = ",prefered,auto,auto";
       

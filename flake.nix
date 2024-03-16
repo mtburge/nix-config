@@ -1,7 +1,7 @@
 {
 	description = "Matt's config";
 
-  outputs = inputs@{ self, nixpkgs, home-manager, hyprland, nur, ...}:
+  outputs = { self, nixpkgs, home-manager, hyprland, nur, ...} @ inputs:
 
     let
       system = {
@@ -39,9 +39,7 @@
           (./. + "/machines" + ("/" + system.hostname) + ".nix")
         ];
         specialArgs = {
-          inherit pkgs;
-          inherit system;
-          inherit user;
+          inherit inputs pkgs system user;
         };
       };
     };

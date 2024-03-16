@@ -1,6 +1,16 @@
 { config, pkgs, ... }:
 
 {
+  home.packages = with pkgs; [
+    #pkgs.fantasque-sans-mono
+    pkgs.fira-code
+    pkgs.fira-code-symbols
+    qt5.qtwayland
+    qt6.qtwayland
+  ];
+
+  fonts.fontconfig.enable = true;
+
   home.pointerCursor = {
     gtk.enable = true;
     package = pkgs.bibata-cursors;
@@ -14,11 +24,6 @@
     };
   };
 
-  home.packages = with pkgs; [
-    qt5.qtwayland
-    qt6.qtwayland
-  ];
-
   gtk = {
     enable = true;
     theme = {
@@ -31,9 +36,9 @@
       name = "Adawaita";
     };
 
-    font = {
-      name = "Sans";
-      size = 11;
-    };
+    #font = {
+    #  name = "Monospace";
+    #  size = 11;
+    #};
   };
 }

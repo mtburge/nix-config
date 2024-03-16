@@ -9,7 +9,7 @@
     ../../system/security/firewall.nix
     ../../system/security/polkit.nix
     
-    ../../system/de/hyprland.nix
+    #../../system/de/hyprland.nix
 
     ../../system/app/1password.nix
     ../../system/common.nix
