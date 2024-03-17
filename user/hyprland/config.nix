@@ -21,6 +21,7 @@
         "waybar"
         "1password --silent"
         "hyprpaper"
+        "hyprlock"
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
       ];

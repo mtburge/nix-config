@@ -8,7 +8,7 @@
 
     ../../system/security/firewall.nix
     ../../system/security/polkit.nix
-    
+
     ../../system/misc/common.nix
 
     ../../system/apps/1password.nix

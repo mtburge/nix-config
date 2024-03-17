@@ -9,6 +9,7 @@
       "$mod, T, exec, $terminal"
       "$mod, M, exit"
       "$mod, Q, killactive"
+      "$mod, L, hyprlock"
     ];
   };
 }

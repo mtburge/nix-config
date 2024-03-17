@@ -1,7 +1,7 @@
 {
   description = "Matt's config";
 
-  outputs = { self, nixpkgs, home-manager, hyprland, nur, ...} @ inputs:
+  outputs = { self, nixpkgs, home-manager, hyprland, hyprlock, nur, ...} @ inputs:
 
   let
     system = {
@@ -29,6 +29,7 @@
 
     imports = [
       hyprland.homeManagerModules.default
+      hyprlock.homeManagerModules.default
     ];
 
   in {
@@ -64,6 +65,7 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
     hyprland.url = "github:hyprwm/Hyprland";
+    hyprlock.url = "github:hyprwm/Hyprlock";
     nixsearch.url = "github:peterldowns/nix-search-cli";
     nur.url = "github:nix-community/NUR";
 
