@@ -9,6 +9,9 @@
     background {
       monitor =
       path = ~/.dotfiles/wallpapers/skipping-stones.png
+      blur_size = 7
+      blur_passes = 1
+      noise = 0.0117
     }
 
     input-field {
@@ -19,9 +22,9 @@
       dots_spacing = 0.15 # Scale of dots' absolute size, 0.0 - 1.0
       dots_center = true
       dots_rounding = -1 # -1 default circle, -2 follow input-field rounding
-      outer_color = rgb(151515)
-      inner_color = rgb(127, 132, 156)
-      font_color = rgb(10, 10, 10)
+      outer_color = rgb(30, 30, 46)
+      inner_color = rgb(88, 91, 112)
+      font_color = rgb(200, 200, 200)
       fade_on_empty = false
       fade_timeout = 1000 # Milliseconds before fade_on_empty is triggered.
       placeholder_text =
