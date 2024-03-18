@@ -28,6 +28,7 @@
     git
     home-manager
     kitty
+    brightnessctl
   ];
 
   programs.dconf.enable = true;
