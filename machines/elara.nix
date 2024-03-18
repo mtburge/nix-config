@@ -24,7 +24,14 @@
       fsType = "vfat";
     };
 
-  swapDevices = [ ];
+  swapDevices = [
+    {
+      device = lib.mkForce "/var/swapfile";
+      label = "swap";
+      size = 16384;
+      priority = 0;
+    }
+  ];
 
   networking.useDHCP = lib.mkDefault false;
   networking.interfaces.enp4s0.useDHCP = lib.mkDefault true;

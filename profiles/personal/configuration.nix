@@ -3,8 +3,9 @@
 {
   imports = [
     ../../system/hardware/opengl.nix
-    ../../system/hardware/zram.nix
+    ../../system/hardware/swap.nix
     ../../system/hardware/media.nix
+    ../../system/hardware/power.nix
 
     ../../system/security/firewall.nix
     ../../system/security/polkit.nix

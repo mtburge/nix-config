@@ -2,14 +2,16 @@
 
 {
   imports = [
-    ../../user/dunst
+    ../../user/desktop-environment
+    
+    #../../user/dunst
     ../../user/electron
     ../../user/firefox
     ../../user/git
-    ../../user/gtk
-    ../../user/hyprland
+    #../../user/gtk
+    #../../user/hyprland
     ../../user/vim
-    ../../user/waybar
+    #../../user/waybar
   ];
 
   home.username = user.username;

@@ -16,6 +16,7 @@
       };
 
       exec-once = [
+        "hypridle"
         "firefox"
         "dunst"
         "waybar"

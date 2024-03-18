@@ -1,7 +1,7 @@
 {
   description = "Matt's config";
 
-  outputs = { self, nixpkgs, home-manager, hyprland, hyprlock, nur, ...} @ inputs:
+  outputs = { self, nixpkgs, home-manager, hyprland, hyprlock, hypridle, nur, ...} @ inputs:
 
   let
     system = {
@@ -19,6 +19,13 @@
       wallpaper = "~/.dotfiles/wallpapers/skipping-stones.png";
     };
 
+    powermgmt = {
+      soft_idle_seconds = "180"; # idle seconds before dimming brightness, keyboard backlight
+      lock_screen_seconds = "300"; # idle seconds before locking the screen
+      idle_seconds = "330"; # idle seconds before turning off display
+      suspend_seconds = "1800"; # idle seconds before suspending system
+    };
+
     pkgs = import nixpkgs {
       system = system.arch;
       config = {
@@ -30,6 +37,7 @@
     imports = [
       hyprland.homeManagerModules.default
       hyprlock.homeManagerModules.default
+      hypridle.homeManagerModules.default
     ];
 
   in {
@@ -56,7 +64,7 @@
         ];
 
         extraSpecialArgs = {
-          inherit inputs system user;
+          inherit inputs system user powermgmt;
         };
       };
     };
@@ -66,6 +74,7 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
     hyprland.url = "github:hyprwm/Hyprland";
     hyprlock.url = "github:hyprwm/Hyprlock";
+    hypridle.url = "github:hyprwm/Hypridle";
     nixsearch.url = "github:peterldowns/nix-search-cli";
     nur.url = "github:nix-community/NUR";
 
