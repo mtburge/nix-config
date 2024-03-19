@@ -17,13 +17,10 @@
 
       exec-once = [
         "hypridle"
-        "firefox"
         "dunst"
         "waybar"
         "1password --silent"
         "hyprpaper"
-        "wl-paste --type text --watch cliphist store"
-        "wl-paste --type image --watch cliphist store"
       ];
 
       input = {
@@ -38,10 +35,16 @@
       };
 
       general = {
-        gaps_in = 5;
-        gaps_out = 100;
+        gaps_in = 8;
+        gaps_out = 32;
         border_size = 2;
         allow_tearing = false;
+        "col.active_border" = "0xFF7f849c";
+        "col.inactive_border" = "0xFF313244";
+      };
+
+      gestures = {
+        workspace_swipe = "on";
       };
 
       decoration = {
