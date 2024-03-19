@@ -9,6 +9,7 @@
 
     ../../system/security/firewall.nix
     ../../system/security/polkit.nix
+    ../../system/security/greetd.nix
 
     ../../system/misc/common.nix
 
