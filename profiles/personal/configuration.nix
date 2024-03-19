@@ -15,6 +15,8 @@
     ../../system/apps/1password.nix
   ];
 
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
   users.groups.${user.username} = {};
   users.users.${user.username} = {
     isNormalUser = true;
