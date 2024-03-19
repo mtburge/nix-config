@@ -3,8 +3,22 @@
 {
   home.packages = with pkgs; [
     waybar
+    playerctl
   ];
-  
+
+  home.file.".config/waybar/mediaplayer.sh" = {
+    executable = true;
+    text = ''
+      #!/bin/sh
+      player_status=$(playerctl status 2> /dev/null)
+      if [ "$player_status" = "Playing" ]; then
+          sed "s/&/&amp;/g" <<< "$(playerctl metadata artist) - $(playerctl metadata title)"
+      elif [ "$player_status" = "Paused" ]; then
+          sed "s/&/&amp;/g" <<< " $(playerctl metadata artist) - $(playerctl metadata title)"
+      fi
+    '';
+  };
+
   programs.waybar = {
     enable = true;
     settings = [{
@@ -18,7 +32,7 @@
         "hyprland/workspaces"
         #"hyprland/mode"
         #"hyprland/scratchpad"
-        "custom/media"
+        "custom/spotify"
       ];
 
       modules-center = [
@@ -51,6 +65,16 @@
           on-scroll-up = "shift_down";
           on-scroll-down = "shift_up";
         };
+      };
+
+      "custom/spotify" = {
+        exec = "$HOME/.config/waybar/mediaplayer.sh";
+        exec-if = "pgrep spotify";
+        interval = 1;
+        format = "<span color=\"#585b70\"> | </span>   {}";
+        on-click = "playerctl play-pause";
+        on-scroll-down = "playerctl next";
+        on-scroll-up = "playerctl previous";
       };
     }];
 

@@ -12,6 +12,8 @@
     #../../user/hyprland
     ../../user/vim
     #../../user/waybar
+  
+    #../../user/lang/python.nix
   ];
 
   home.username = user.username;

@@ -13,6 +13,7 @@
 
     ../../system/misc/common.nix
     ../../system/apps/1password.nix
+  
   ];
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
