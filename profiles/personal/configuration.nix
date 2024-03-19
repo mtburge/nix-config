@@ -12,7 +12,6 @@
     ../../system/security/greetd.nix
 
     ../../system/misc/common.nix
-
     ../../system/apps/1password.nix
   ];
 

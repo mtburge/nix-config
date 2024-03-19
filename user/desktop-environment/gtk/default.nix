@@ -7,10 +7,11 @@
 
     monaspace
     jetbrains-mono
+    font-awesome
 
-    pkgs.nerdfonts
-    (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono"]; })
-    pkgs.noto-fonts-emoji
+    nerdfonts
+    (nerdfonts.override { fonts = [ "JetBrainsMono"]; })
+    noto-fonts-emoji
 
     qt5.qtwayland
     qt6.qtwayland
