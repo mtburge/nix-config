@@ -46,7 +46,7 @@
         system = system.arch;
         modules = [
           nur.nixosModules.nur
-          (./. + "/machines" + ("/" + system.hostname) + ".nix")
+          (./. + "/hosts" + ("/" + system.hostname) + ".nix")
         ];
         specialArgs = {
           inherit inputs pkgs system user;
