@@ -3,13 +3,20 @@
 {
   wayland.windowManager.hyprland = {
     settings = {
-      monitor = ",prefered,auto,auto";
+      monitor = [
+        "eDP-1,prefered,auto,1.175000"
+        ",prefered,auto,auto"
+      ];
 
       env = [
         "XCURSOR_SIZE,24"
         "GDK_SCALE,1.5"
         "GDK_DPI_SCALE=,1.5"
       ];
+
+      misc = {
+        key_press_enables_dpms = true;
+      };
 
       xwayland = {
         force_zero_scaling = true;

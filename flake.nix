@@ -6,7 +6,7 @@
   let
     system = {
       arch = "x86_64-linux";
-      hostname = "elara";
+      hostname = "framework13";
       profile = "personal";
       timezone = "Europe/London";
       locale = "en_GB.UTF-8";
