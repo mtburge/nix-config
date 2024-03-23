@@ -2,7 +2,19 @@
 
 {
   imports = [
-    ../profiles/${system.profile}/configuration.nix
+    #../profiles/${system.profile}/configuration.nix
+
+    ../system/hardware/opengl.nix
+    ../system/hardware/swap.nix
+    ../system/hardware/media.nix
+    ../system/hardware/power.nix
+
+    ../system/security/firewall.nix
+    ../system/security/polkit.nix
+    ../system/security/greetd.nix
+
+    ../system/misc/common.nix
+    ../system/apps/1password.nix
   ];
 
   ####
@@ -13,6 +25,7 @@
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
   boot.kernelParams = [ "mem_sleep_default=deep" "resume_offset=192458752" ];
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   boot.initrd.luks.devices."nixos".device = "/dev/disk/by-uuid/4a6e437b-00d6-41fe-a1be-687700c03cb2";
   boot.resumeDevice = "/dev/disk/by-uuid/4a6e437b-00d6-41fe-a1be-687700c03cb2";
@@ -85,8 +98,13 @@
     neofetch
   ];
 
+  networking.firewall.allowedTCPPorts = [
+    57621 #spotify
+  ];
 
-
+  networking.firewall.allowedUDPPorts = [
+    5353 #spotify
+  ];
 
   ####
   # User
