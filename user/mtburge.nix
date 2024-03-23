@@ -2,15 +2,15 @@
 
 {
   imports = [
-    ../../user/desktop-environment
+    ../user/desktop-environment
     
     #../../user/dunst
-    ../../user/electron
-    ../../user/firefox
-    ../../user/git
+    ../user/electron
+    ../user/firefox
+    ../user/git
     #../../user/gtk
     #../../user/hyprland
-    ../../user/vim
+    ../user/vim
     #../../user/waybar
   
     #../../user/lang/python.nix

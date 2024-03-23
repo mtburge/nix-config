@@ -1,4 +1,4 @@
-{ config, lib, pkgs, modulesPath, system, ...}:
+{ config, lib, pkgs, modulesPath, system, home-manager, ...}:
 
 {
   imports = [
@@ -109,7 +109,6 @@
   ####
   # User
   ####
-
 
 
 

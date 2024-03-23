@@ -60,7 +60,7 @@
 
         modules = [
           nur.nixosModules.nur
-          (./. + "/profiles" + ("/" + system.profile) + "/home.nix")
+          (./. + "/user" + ("/" + user.username) + ".nix")
         ];
 
         extraSpecialArgs = {
