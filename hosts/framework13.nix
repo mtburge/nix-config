@@ -11,6 +11,7 @@
     ../system/firewall.nix
     ../system/polkit.nix
     ../system/greetd.nix
+    ../system/1password.nix
   ];
 
   ####
