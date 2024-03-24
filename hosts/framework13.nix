@@ -24,7 +24,7 @@
   boot.kernelPackages = pkgs.linuxPackages_6_8;
 
   boot.initrd.luks.devices."nixos".device = "/dev/nvme0n1p2";
-  boot.resumeDevice = "/dev/disk/by-uuid/4a6e437b-00d6-41fe-a1be-687700c03cb2";
+  #boot.resumeDevice = "/dev/disk/by-uuid/4a6e437b-00d6-41fe-a1be-687700c03cb2";
   
   fileSystems = {
     "/" = {
