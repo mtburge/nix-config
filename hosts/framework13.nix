@@ -23,12 +23,13 @@
   boot.kernelParams = [ "mem_sleep_default=deep" "resume_offset=192458752" ];
   boot.kernelPackages = pkgs.linuxPackages_6_8;
 
-  boot.initrd.luks.devices."nixos".device = "/dev/disk/by-uuid/4a6e437b-00d6-41fe-a1be-687700c03cb2";
+  boot.initrd.luks.devices."nixos".device = "/dev/nvme0n1p1";
   boot.resumeDevice = "/dev/disk/by-uuid/4a6e437b-00d6-41fe-a1be-687700c03cb2";
   
   fileSystems = {
     "/" = {
-      device = "/dev/disk/by-uuid/16919bca-732d-470d-9dee-1d38cdfd441d";
+      #device = "/dev/disk/by-uuid/16919bca-732d-470d-9dee-1d38cdfd441d";
+      device = "/dev/disk/by-label/nixos";
       fsType = "ext4";
     };
     
