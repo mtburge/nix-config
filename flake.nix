@@ -55,12 +55,13 @@
     };
 
     homeConfigurations = {
-      ${user.username} = home-manager.lib.homeManagerConfiguration {
+      "mtburge" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 
         modules = [
           nur.nixosModules.nur
-          (./. + "/user" + ("/" + user.username) + ".nix")
+          ./home/mtburge.nix
+          #(./. + "/user" + ("/" + user.username) + ".nix")
         ];
 
         extraSpecialArgs = {

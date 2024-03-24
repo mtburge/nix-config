@@ -2,19 +2,15 @@
 
 {
   imports = [
-    #../profiles/${system.profile}/configuration.nix
+    ../system
+    ../system/gpu.nix
+    ../system/swap.nix
+    ../system/media.nix
+    ../system/power.nix
 
-    ../system/hardware/opengl.nix
-    ../system/hardware/swap.nix
-    ../system/hardware/media.nix
-    ../system/hardware/power.nix
-
-    ../system/security/firewall.nix
-    ../system/security/polkit.nix
-    ../system/security/greetd.nix
-
-    ../system/misc/common.nix
-    ../system/apps/1password.nix
+    ../system/firewall.nix
+    ../system/polkit.nix
+    ../system/greetd.nix
   ];
 
   ####

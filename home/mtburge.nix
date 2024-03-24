@@ -2,18 +2,18 @@
 
 {
   imports = [
-    ../user/desktop-environment
-    
-    #../../user/dunst
-    ../user/electron
-    ../user/firefox
-    ../user/git
-    #../../user/gtk
-    #../../user/hyprland
-    ../user/vim
-    #../../user/waybar
-  
-    #../../user/lang/python.nix
+    ../user/electron.nix
+    ../user/firefox.nix
+    ../user/git.nix
+    ../user/dunst.nix
+    ../user/gtk.nix
+    ../user/hypridle.nix
+    ../user/hyprland.nix
+    ../user/hyprlock.nix
+    ../user/hyprpaper.nix
+    ../user/waybar.nix
+    ../user/vim.nix
+    ../user/1password.nix  
   ];
 
   home.username = user.username;
