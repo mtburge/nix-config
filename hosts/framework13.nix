@@ -23,7 +23,7 @@
   boot.kernelParams = [ "mem_sleep_default=deep" "resume_offset=192458752" ];
   boot.kernelPackages = pkgs.linuxPackages_6_8;
 
-  boot.initrd.luks.devices."nixos".device = "/dev/nvme0n1p2";
+  boot.initrd.luks.devices."nixos".device = "/dev/disk/by-partlabel/root";
   #boot.resumeDevice = "/dev/disk/by-uuid/4a6e437b-00d6-41fe-a1be-687700c03cb2";
   
   fileSystems = {
@@ -34,7 +34,7 @@
     };
     
     "/boot" = {
-      device = "/dev/disk/by-label/NIXBOOT";
+      device = "/dev/disk/by-partlabel/boot";
       fsType = "vfat";
     };
   };
