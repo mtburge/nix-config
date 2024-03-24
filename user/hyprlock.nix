@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }:
+{ inputs, pkgs, user, ... }:
 
 {
   home.packages = with inputs.hyprlock.packages.${pkgs.system}; [
@@ -16,7 +16,7 @@
 
     background {
       monitor =
-      path = ~/.dotfiles/wallpapers/skipping-stones.png
+      path = ${user.wallpaper}
       blur_size = 14
       blur_passes = 1
       noise = 0.0117
