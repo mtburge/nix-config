@@ -17,11 +17,11 @@
   # Hardware
   ####
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "thunderbolt" "usb_storage" "usbhid" "sd_mod" ];
-  boot.initrd.kernelModules = [ "amdgpu" "i2c-dev" "i2c-piix4" ];
+  boot.initrd.kernelModules = [ "amdgpu" ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
   boot.kernelParams = [ "mem_sleep_default=deep" "resume_offset=192458752" ];
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_6_8;
 
   boot.initrd.luks.devices."nixos".device = "/dev/disk/by-uuid/4a6e437b-00d6-41fe-a1be-687700c03cb2";
   boot.resumeDevice = "/dev/disk/by-uuid/4a6e437b-00d6-41fe-a1be-687700c03cb2";
@@ -56,7 +56,7 @@
   # networking.interfaces.wlp1s0.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  hardware.cpu.amd.updateMicrocode = true; #lib.mkDefault config.hardware.enableRedistributableFirmware;
 
   ####
   # System

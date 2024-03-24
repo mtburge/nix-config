@@ -2,6 +2,7 @@
 
 {
   nix.settings.experimental-features = ["nix-command" "flakes"];
+  hardware.enableRedistributableFirmware = true;
 
   # networking
   networking.hostName = system.hostname;
