@@ -13,23 +13,22 @@
     ../system/greetd.nix
     ../system/1password.nix
   ];
-
-  ####
-  # Hardware
-  ####
+  
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "thunderbolt" "usb_storage" "usbhid" "sd_mod" ];
   boot.initrd.kernelModules = [ "amdgpu" ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
-  boot.kernelParams = [ "mem_sleep_default=deep" "resume_offset=192458752" ];
+  boot.kernelParams = [ "mem_sleep_default=deep" "resume_offset=104388608" ];
   boot.kernelPackages = pkgs.linuxPackages_6_8;
 
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+  
   boot.initrd.luks.devices."nixos".device = "/dev/disk/by-partlabel/root";
-  #boot.resumeDevice = "/dev/disk/by-uuid/4a6e437b-00d6-41fe-a1be-687700c03cb2";
+  boot.resumeDevice = "/dev/dm-0"; 
   
   fileSystems = {
     "/" = {
-      #device = "/dev/disk/by-uuid/16919bca-732d-470d-9dee-1d38cdfd441d";
       device = "/dev/mapper/nixos";
       fsType = "ext4";
     };
@@ -42,7 +41,7 @@
 
   swapDevices = [
     {
-      device = lib.mkForce "/swapfile";
+      device = lib.mkForce "/var/swapfile";
       label = "swap";
       size = 34816;
       priority = 0;
@@ -57,20 +56,13 @@
   # networking.interfaces.eth0.useDHCP = lib.mkDefault true;
   # networking.interfaces.wlp1s0.useDHCP = lib.mkDefault true;
 
-  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  hardware.cpu.amd.updateMicrocode = true; #lib.mkDefault config.hardware.enableRedistributableFirmware;
-
-  ####
-  # System
-  ####
+  nixpkgs.hostPlatform = lib.mkDefault system.arch;
+  hardware.cpu.amd.updateMicrocode = true;
+  
   services.udev.extraRules = ''
     ACTION=="add", SUBSYSTEM=="usb", DRIVER=="usb", ATTR{power/wakeup}="enabled"
   '';
-
-  # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-
+  
   services.power-profiles-daemon.enable = true;
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
@@ -83,7 +75,7 @@
     isNormalUser = true;
     group = "mtburge";
     initialPassword = "changeme";
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" ]; 
     packages = with pkgs; [];
   };
 
@@ -103,18 +95,6 @@
   networking.firewall.allowedUDPPorts = [
     5353 #spotify
   ];
-
-  ####
-  # User
-  ####
-
-
-
-
-
-
-
-
-
+  
   system.stateVersion = "23.11";
 }
