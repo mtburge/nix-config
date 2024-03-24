@@ -2,12 +2,11 @@
   description = "Matt's config";
 
   outputs = { self, nixpkgs, home-manager, hyprland, hyprlock, hypridle, nur, ...} @ inputs:
-
+  
   let
     system = {
       arch = "x86_64-linux";
       hostname = "framework13";
-      profile = "personal";
       timezone = "Europe/London";
       locale = "en_GB.UTF-8";
     };
@@ -61,7 +60,6 @@
         modules = [
           nur.nixosModules.nur
           ./home/mtburge.nix
-          #(./. + "/user" + ("/" + user.username) + ".nix")
         ];
 
         extraSpecialArgs = {
