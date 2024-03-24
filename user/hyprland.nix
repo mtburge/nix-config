@@ -34,7 +34,6 @@
       };
 
       exec-once = [
-        "hyprlock"
         "hypridle"
         "dunst"
         "waybar"
