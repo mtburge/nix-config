@@ -29,6 +29,7 @@
     home-manager
     kitty
     brightnessctl
+    killall
   ];
 
   programs.dconf.enable = true;
