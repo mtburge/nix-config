@@ -29,7 +29,7 @@
   fileSystems = {
     "/" = {
       #device = "/dev/disk/by-uuid/16919bca-732d-470d-9dee-1d38cdfd441d";
-      device = "/dev/disk/by-label/nixos";
+      device = "/dev/mapper/nixos";
       fsType = "ext4";
     };
     
