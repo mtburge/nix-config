@@ -6,7 +6,7 @@
   let
     system = {
       arch = "x86_64-linux";
-      hostname = "elara";
+      hostname = "framework13";
       profile = "personal";
       timezone = "Europe/London";
       locale = "en_GB.UTF-8";
@@ -16,7 +16,7 @@
       username = "mtburge";
       name = "Matt Burgess";
       email = "hey@mtburge.com";
-      wallpaper = "~/.dotfiles/wallpapers/skipping-stones.png";
+      wallpaper = "~/.dotfiles/wallpapers/blobs-gnome.png";
     };
 
     powermgmt = {
@@ -46,7 +46,7 @@
         system = system.arch;
         modules = [
           nur.nixosModules.nur
-          (./. + "/machines" + ("/" + system.hostname) + ".nix")
+          (./. + "/hosts" + ("/" + system.hostname) + ".nix")
         ];
         specialArgs = {
           inherit inputs pkgs system user;
@@ -55,12 +55,13 @@
     };
 
     homeConfigurations = {
-      ${user.username} = home-manager.lib.homeManagerConfiguration {
+      "mtburge" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 
         modules = [
           nur.nixosModules.nur
-          (./. + "/profiles" + ("/" + system.profile) + "/home.nix")
+          ./home/mtburge.nix
+          #(./. + "/user" + ("/" + user.username) + ".nix")
         ];
 
         extraSpecialArgs = {

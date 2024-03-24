@@ -2,6 +2,7 @@
 
 {
   nix.settings.experimental-features = ["nix-command" "flakes"];
+  hardware.enableRedistributableFirmware = true;
 
   # networking
   networking.hostName = system.hostname;
@@ -29,6 +30,7 @@
     home-manager
     kitty
     brightnessctl
+    killall
   ];
 
   programs.dconf.enable = true;
