@@ -1,12 +1,12 @@
-{ pkgs, system, user, ... }: 
+{ lib, pkgs, system, user, ... }: 
 
 {
-  nix.settings.experimental-features = ["nix-command" "flakes"];
   hardware.enableRedistributableFirmware = true;
 
-  # networking
-  networking.hostName = system.hostname;
-
+  # Nix config
+  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nixpkgs.hostPlatform = lib.mkDefault system.arch;
+  
   # i18n
   time.timeZone = system.timezone;
   i18n.defaultLocale = system.locale;
@@ -24,6 +24,8 @@
 
   # Common packages
   environment.systemPackages = with pkgs; [
+    tree
+    htop
     vim
     neofetch
     git

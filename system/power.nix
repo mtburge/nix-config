@@ -1,6 +1,8 @@
 { inputs, pkgs, ...}:
 
 {
+  services.power-profiles-daemon.enable = true;
+
   services.logind = {
     extraConfig = ''
       HandlePowerKey=suspend-then-hibernate
