@@ -33,6 +33,7 @@
     kitty
     brightnessctl
     killall
+    xdg-utils
   ];
 
   programs.dconf.enable = true;

@@ -13,6 +13,7 @@
     ../user/hyprpaper.nix
     ../user/waybar.nix
     ../user/vim.nix
+    ../user/walker.nix
   ];
 
   home.username = user.username;

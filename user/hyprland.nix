@@ -39,6 +39,7 @@
         "waybar"
         "1password --silent"
         "hyprpaper"
+        "walker --gapplication-service"
       ];
 
       input = {
@@ -98,7 +99,9 @@
         "$mod, Q, killactive"
         "$mod, L, exec, hyprlock"
         "$mod, F, fullscreen"
-        "$mod, Space, exec, rofi -show drun"
+        "$mod, Space, exec, walker"
+
+        "$mod, B, exec, xdg-open about:home"
 
         "$mod, 1, workspace, 1"
         "$mod, 2, workspace, 2"
