@@ -41,6 +41,7 @@
 
       modules-right = [
         "network"
+        "pulseaudio"
         "cpu"
         "memory"
         "temperature"

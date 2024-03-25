@@ -8,6 +8,7 @@
       HandlePowerKey=suspend-then-hibernate
       IdleAction=suspend-then-hibernate
       IdleActionSec=15m
+      HandleLidSwitch=ignore
     '';
     lidSwitch = "suspend-then-hibernate";
     powerKey = "suspend-then-hibernate";

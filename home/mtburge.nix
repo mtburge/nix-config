@@ -31,9 +31,5 @@
     tree
   ];
 
-  programs.rofi = {
-    enable = true;
-  };
-
   home.stateVersion = "23.11";
 }

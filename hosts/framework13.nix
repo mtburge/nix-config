@@ -55,7 +55,7 @@
     isNormalUser = true;
     group = "mtburge";
     initialPassword = "changeme";
-    extraGroups = [ "wheel" ]; 
+    extraGroups = [ "wheel" "audio" ]; 
     packages = with pkgs; [];
   };
 

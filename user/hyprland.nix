@@ -94,15 +94,16 @@
       "$mod" = "SUPER";
 
       bind = [
+        # global shortcuts
         "$mod, T, exec, kitty"
         "$mod, M, exit"
         "$mod, Q, killactive"
         "$mod, L, exec, hyprlock"
         "$mod, F, fullscreen"
         "$mod, Space, exec, walker"
-
         "$mod, B, exec, xdg-open about:home"
 
+        # switch workspaces
         "$mod, 1, workspace, 1"
         "$mod, 2, workspace, 2"
         "$mod, 3, workspace, 3"
@@ -115,6 +116,7 @@
         "$mod, Tab, workspace, e+1"
         "$mod SHIFT, Tab, workspace, e-1"
 
+        # move window to workspace
         "$mod SHIFT, 1, movetoworkspacesilent, 1"
         "$mod SHIFT, 2, movetoworkspacesilent, 2"
         "$mod SHIFT, 3, movetoworkspacesilent, 3"
@@ -125,14 +127,27 @@
         "$mod SHIFT, 8, movetoworkspacesilent, 8"
         "$mod SHIFT, 9, movetoworkspacesilent, 9"
 
+        # select window
         "$mod, left, movefocus, l"
         "$mod, right, movefocus, r"
         "$mod, up, movefocus, u"
         "$mod, down, movefocus, d"
+
+        # move window position
         "$mod CTRL, left, movewindow, l"
         "$mod CTRL, right, movewindow, r"
         "$mod CTRL, up, movewindow, u"
         "$mod CTRL, down, movewindow, d"
+
+        # xf86 keys
+        ", xf86audiolowervolume, exec, wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%-"
+        ", xf86audioraisevolume, exec, wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+"
+        ", xf86audiomute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+        ", xf86audioplay, exec, playerctl play-pause" 
+        ", xf86audionext, exec, playerctl next" 
+        ", xf86audioprev, exec, playerctl previous" 
+        ", xf86monbrightnessup, exec, brightnessctl set 10%+" 
+        ", xf86monbrightnessdown, exec, brightnessctl set 10%-" 
       ];
 
       binde = [
@@ -145,6 +160,11 @@
       bindm = [
         "$mod, mouse:272, movewindow"
         "$mod, mouse:273, resizewindow"
+      ];
+
+      bindl = [
+        ",switch:off:Lid Switch, exec, hyprctl keyword monitor \"eDP-1,prefered,auto,1.175000\""
+        ",switch:on:Lid Switch, exec, hyprctl keyword monitor \"eDP-1,disable\""
       ];
     };
   };
