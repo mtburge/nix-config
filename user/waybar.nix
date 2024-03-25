@@ -50,7 +50,7 @@
       ];
 
       clock = {
-        format = "{:%a %d %b %H:%M} <span color=\"#585b70\"> | </span>";
+        format = " {:%H:%M %a %d %b} <span color=\"#585b70\"> | </span>";
         tooltip-format = "<tt><big>{calendar}</big></tt>";
         calendar = {
           mode = "month";
@@ -76,6 +76,19 @@
         on-click = "playerctl play-pause";
         on-scroll-down = "playerctl next";
         on-scroll-up = "playerctl previous";
+      };
+
+      cpu = {
+        format = "{}%";
+      };
+
+      memory = {
+        format = "{}%";
+      };
+      
+      temperature = {
+        format = "{temperatureC}°C";
+        hwmon-path = "/sys/class/hwmon/hwmon0/temp1_input";
       };
     }];
 
@@ -105,6 +118,14 @@
         margin: 10px;
       }
 
+      #network, #cpu, #battery, #memory, #pulseaudio, #temperature {
+        margin: 0 10px 0 0;
+      }
+
+      #cpu span {
+        margin: 15px;
+      }
+
       tooltip label {
         color: #9399b2;
       }
@@ -114,10 +135,11 @@
       }
       
       #clock {
-        font-weight: 800;
         font-size: 15px;
         margin-right: 5px;
       }
+
+      
 
       #clock tt {
         background: red;
