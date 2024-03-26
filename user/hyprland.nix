@@ -168,6 +168,15 @@
         ",switch:off:Lid Switch, exec, hyprctl keyword monitor \"eDP-1,prefered,auto,1.175000\""
         ",switch:on:Lid Switch, exec, hyprctl keyword monitor \"eDP-1,disable\""
       ];
+
+      windowrulev2 = [
+        "float,class:(pavucontrol)"
+        "size 600 500,class:(pavucontrol)"
+        "move onscreen 100%-610 50,class:(pavucontrol)"
+      
+        "float,class:(nm-connection-editor)"
+        "move onscreen 100%-610 50,class:(nm-connection-editor)"
+      ];
     };
   };
 }

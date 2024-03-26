@@ -118,6 +118,7 @@
           headphone = " ";
           default = [" " " "];
         };
+        on-click = "killall pavucontrol | pavucontrol";
       };
 
       battery = {
