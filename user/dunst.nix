@@ -7,65 +7,75 @@
 
   services.dunst = {
     enable = true;
+    iconTheme = {
+      package = pkgs.gnome.adwaita-icon-theme;
+      name = "Adwaita";
+      size = "32x32";
+    };
+
     settings = {
       global = {
+        # size and position
         monitor = 0;
         follow = "mouse";
-        width = 300;
+        width = "(0, 500)";
         height = 300;
-        origin = "top-right";
-        offset = "10x50";
+        origin = "bottom-center";
+        offset = "0x50";
         scale = 0;
-        notification_limit = 0;
-        
-        progress_bar = true;
-        progress_bar_height = 10;
-        progress_bar_frame_width = 1;
-        progress_bar_min_width = 150;
-        progress_bar_max_width = 300;
+        notification_limit = 6;
 
-        indicate_hidden = "yes";
-        transparency = 15;
-        separator_height = 1;
-        
-        padding = 8;
-        horizontal_padding = 10;
-        text_icon_padding = 0;
+        # progress bar
+        progress_bar = true;
+        progress_bar_height = 18;
+        progress_bar_frame_width = 1;
+        progress_bar_min_width = 360;
+        progress_bar_max_width = 360;
+        progress_bar_corners = "all";
+        progress_bar_corner_radius = 5;
+
+        # styling
+        timeout = 5;
+        padding = 16;
+        separator_height = 5;
+        horizontal_padding = 16;
         frame_width = 0;
-        frame_color = "#282a36";
+        gap_size = 2;
         separator_color = "frame";
         sort = "yes";
         idle_threshold = 120;
-        font = "Monospace 10";
-        line_height = 0;
-        markup = "full";
-        format = "%s %p\\n%b";
+        font = "JetBrains Mono 11";
+        line_height = 4;
         alignment = "left";
-        vertical_alignment = "center";
+        vertical_alignment = "top";
         show_age_threshold = 60;
-        ellipsize = "middle";
         ignore_newline = "no";
         stack_duplicates = true;
         hide_duplicate_count = true;
+        corner_radius = 5;
+
+        # formatting
+        markup = "full";
+        format = "<b>%s</b>\n<small>%b</small>%p\n%a";
+        ellipsize = "middle";
+
+        # icons
+        icon_theme = "Adwaita";
+        icon_corner_radius = 5;
+        min_icon_size = 24;
+        max_icon_size = 42;
+        text_icon_padding = 14;
       
-        browser = "${pkgs.firefox}/bin/firefox -new-tab";
-      };
-
-      urgency_low = {
-        background = "#282a36";
-        foreground = "#6272a4";
-        timeout = 10;
-      };
-
-      urgency_normal = {
-        background = "#282a36";
-        foreground = "#bd93f9";
-        timeout = 10;
+        # colours
+        background = "#313244";
+        foreground = "#bac2de";
+        frame_color = "#45475a";
+        highlight = "#cba6f7";
       };
 
       urgency_critical = {
-        background = "#ff5555";
-        foreground = "#f8f8f2";
+        background = "#f38ba8";
+        foreground = "#181825";
         frame_color = "#ff5555";
         timeout = 0;
       };
