@@ -43,6 +43,7 @@
       modules-right = [
         "network"
         "pulseaudio"
+        "bluetooth"
         "cpu"
         "memory"
         "temperature"
@@ -56,6 +57,11 @@
       "hyprland/window" = {
         format = "{}";
         max-length = 75;
+      };
+
+      tray = {
+        icon-size = 18;
+        spacing = 10;
       };
 
       network = {
@@ -85,6 +91,13 @@
         };
       };
 
+      bluetooth = {
+        format = "";
+        format-disabled = "";
+        format-connected = " {device_alias}";
+        on-click = "exec blueman-manager";
+      };
+
       "custom/spotify" = {
         exec = "$HOME/.config/waybar/mediaplayer.sh";
         exec-if = "pgrep spotify";
@@ -112,7 +125,7 @@
 
       pulseaudio = {
         format = "{icon}{volume}%";
-        format-bluetooth = "{icon}{volume}%";
+        format-bluetooth = " {icon}{volume}%";
         format-muted = " 0%";
         format-icons = {
           headphone = " ";
@@ -165,7 +178,7 @@
         margin: 10px;
       }
 
-      #network, #cpu, #battery, #memory, #pulseaudio, #temperature {
+      #network, #bluetooth, #cpu, #battery, #memory, #pulseaudio, #temperature {
         margin: 0 0 0 18px;
       }
 

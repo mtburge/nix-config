@@ -41,6 +41,7 @@
         "waybar"
         "1password --silent"
         "hyprpaper"
+        "blueman-applet &"
         "walker --gapplication-service"
       ];
 
@@ -176,6 +177,9 @@
       
         "float,class:(nm-connection-editor)"
         "move onscreen 100%-610 50,class:(nm-connection-editor)"
+      
+        "float,class:(blueman-manager)"
+        "move onscreen 100%-610 50,class:(blueman-manager)"
       ];
     };
   };

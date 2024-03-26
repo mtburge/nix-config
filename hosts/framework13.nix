@@ -11,6 +11,8 @@
     ../system/network.nix
     ../system/polkit.nix
     ../system/greetd.nix
+    ../system/bluetooth.nix
+
     ../system/1password.nix
   ];
   
