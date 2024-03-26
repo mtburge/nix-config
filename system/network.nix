@@ -1,8 +1,11 @@
-{ lib, system, ... }:
+{ lib, system, pkgs, ... }:
 
 {
+  environment.systemPackages = with pkgs; [
+    networkmanagerapplet
+  ];
+
   networking.hostName = system.hostname;
-  networking.useDHCP = lib.mkDefault true;
-  
+  networking.networkmanager.enable = true;
   networking.firewall.enable = true;
 }

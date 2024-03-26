@@ -29,11 +29,10 @@
       reload_style_on_change = true;
 
       modules-left = [
+        "tray"
         "clock"
         "custom/seperator"
         "hyprland/workspaces"
-        #"hyprland/mode"
-        #"hyprland/scratchpad"
         "custom/spotify"
       ];
 
@@ -48,8 +47,6 @@
         "memory"
         "temperature"
         "battery"
-        "custom/seperator"
-        "tray"
       ];
 
       "custom/seperator" = {
@@ -61,8 +58,16 @@
         max-length = 75;
       };
 
+      network = {
+        format-wifi = "  {essid}";
+        format-ethernet = " {ipaddr}/{cidr}";
+        tooltip-format-wifi = "{essid} ({signalStrength}%): {ipaddr}/{cidr}";
+        tooltip-format-ethernet = "{ifname}: {ipaddr}/{cidr}";
+        on-click = "exec nm-connection-editor";
+      };
+
       clock = {
-        format = "  {:<b>%H:%M</b> %a %d %b}";
+        format = "{:<b>%H:%M</b> %a %d %b}";
         tooltip-format = "<tt><big>{calendar}</big></tt>";
         calendar = {
           mode = "month";
@@ -88,6 +93,7 @@
         on-click = "playerctl play-pause";
         on-scroll-down = "playerctl next";
         on-scroll-up = "playerctl previous";
+        max-length = 35;
       };
 
       cpu = {
@@ -145,6 +151,10 @@
 
       .modules-right {
         margin-right: 20px;
+      }
+
+      #tray {
+        margin-right: 18px;
       }
 
       tooltip {
