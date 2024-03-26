@@ -16,7 +16,9 @@
     settings = {
       monitor = [
         "eDP-1,prefered,auto,1.175000"
+        "DP-3,prefered,-2256x-768,auto"
         ",prefered,auto,auto"
+        
       ];
 
       env = [
