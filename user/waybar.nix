@@ -26,9 +26,11 @@
       position = "top";
       height = 40;
       spacing = 5;
+      reload_style_on_change = true;
 
       modules-left = [
         "clock"
+        "custom/seperator"
         "hyprland/workspaces"
         #"hyprland/mode"
         #"hyprland/scratchpad"
@@ -46,11 +48,21 @@
         "memory"
         "temperature"
         "battery"
+        "custom/seperator"
         "tray"
       ];
 
+      "custom/seperator" = {
+        format = "<span color=\"#585b70\"> / </span>";
+      };
+
+      "hyprland/window" = {
+        format = "{}";
+        max-length = 75;
+      };
+
       clock = {
-        format = " {:%H:%M %a %d %b} <span color=\"#585b70\"> | </span>";
+        format = "  {:<b>%H:%M</b> %a %d %b}";
         tooltip-format = "<tt><big>{calendar}</big></tt>";
         calendar = {
           mode = "month";
@@ -72,43 +84,67 @@
         exec = "$HOME/.config/waybar/mediaplayer.sh";
         exec-if = "pgrep spotify";
         interval = 1;
-        format = "<span color=\"#585b70\"> | </span>   {}";
+        format = "<span color=\"#585b70\"> / </span>   {}";
         on-click = "playerctl play-pause";
         on-scroll-down = "playerctl next";
         on-scroll-up = "playerctl previous";
       };
 
       cpu = {
-        format = "{}%";
+        format = " {usage:1}%";
       };
 
       memory = {
-        format = "{}%";
+        format = " {used:0.1f}GiB";
+        tooltip-format = "{avail:0.1f}GiB Available";
       };
       
       temperature = {
-        format = "{temperatureC}°C";
+        format = " {temperatureC}°C";
         hwmon-path = "/sys/class/hwmon/hwmon0/temp1_input";
+      };
+
+      pulseaudio = {
+        format = "{icon}{volume}%";
+        format-bluetooth = "{icon}{volume}%";
+        format-muted = " 0%";
+        format-icons = {
+          headphone = " ";
+          default = [" " " "];
+        };
+      };
+
+      battery = {
+        format = "{icon} {capacity}%";
+        format-icons = [" " " " " " " " " "];
+        states = {
+          warning = 30;
+          critical = 15;
+        };
       };
     }];
 
     style = ''
       * {
-        font-family: "JetBrains Mono", "Font Awesome 6 Free";
+        font-family: "JetBrains Mono", "Line Awesome";
         font-size: 14px;
       }
       
-      window#waybar {
+      window#waybar { 
         background: rgba(30, 30, 46, 0.8);
         color: #cdd6f4;
       }
 
+      #custom-seperator {
+        margin: 0 10px;
+      }
+
       .modules-left {
-        margin-left: 10px;
+        margin-left: 20px;
       }
 
       .modules-right {
-        margin-right: 10px;
+        margin-right: 20px;
       }
 
       tooltip {
@@ -119,11 +155,7 @@
       }
 
       #network, #cpu, #battery, #memory, #pulseaudio, #temperature {
-        margin: 0 10px 0 0;
-      }
-
-      #cpu span {
-        margin: 15px;
+        margin: 0 0 0 18px;
       }
 
       tooltip label {
@@ -137,12 +169,6 @@
       #clock {
         font-size: 15px;
         margin-right: 5px;
-      }
-
-      
-
-      #clock tt {
-        background: red;
       }
 
       #workspaces {
