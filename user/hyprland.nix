@@ -180,6 +180,10 @@
       
         "float,class:(blueman-manager)"
         "move onscreen 100%-610 50,class:(blueman-manager)"
+      
+        "float,class:^(firefox)$,title:^(Picture-in-Picture)$"
+        "keepaspectratio,class:^(firefox)$,title:^(Picture-in-Picture)$"
+        "move onscreen 80% 80%,class:^(firefox)$,title:^(Picture-in-Picture)$"
       ];
     };
   };
