@@ -32,13 +32,23 @@
     };
   };
 
+  xdg.configFile = {
+    "gtk-4.0/assets".source = "${config.gtk.theme.package}/share/themes/${config.gtk.theme.name}/gtk-3.0/assets";
+    "gtk-4.0/gtk.css".source = "${config.gtk.theme.package}/share/themes/${config.gtk.theme.name}/gtk-3.0/gtk.css";
+    "gtk-4.0/gtk-dark.css".source = "${config.gtk.theme.package}/share/themes/${config.gtk.theme.name}/gtk-3.0/gtk-dark.css";
+  };
+
+  home.sessionVariables = {
+    "GTK_THEME" = "Catppuccin-Mocha-Standard-Lavender-Dark:dark";
+  };
+
   gtk = {
     enable = true;
     
     theme = {
       package = pkgs.catppuccin-gtk.override {
         accents = [ "lavender" ];
-        size = "compact";
+        size = "standard";
         tweaks = [];
         variant = "mocha";
       };
@@ -60,13 +70,13 @@
         flavor = "mocha";
         accent = "lavender";
       };
-      name = "Adawaita";
+      name = "cat-mocha-lavender";
     };
 
     font = {
       #name = "JetBrainsMono Nerd Font";
       #name = "Monaspace Argon Medium";
-      name = "Jetbrains Mono";
+      name = "JetBrains Mono";
       size = 11;
     };
   };
