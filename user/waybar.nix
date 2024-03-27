@@ -46,6 +46,7 @@
         "bluetooth"
         "cpu"
         "memory"
+        "disk"
         "temperature"
         "battery"
       ];
@@ -96,6 +97,12 @@
         format-disabled = "";
         format-connected = " {device_alias}";
         on-click = "exec blueman-manager";
+      };
+
+      disk = {
+        interval = 60;
+        format = " {percentage_used}%";
+        on-click = "exec nautilus";
       };
 
       "custom/spotify" = {
@@ -178,7 +185,7 @@
         margin: 10px;
       }
 
-      #network, #bluetooth, #cpu, #battery, #memory, #pulseaudio, #temperature {
+      #network, #disk, #bluetooth, #cpu, #battery, #memory, #pulseaudio, #temperature {
         margin: 0 0 0 18px;
       }
 

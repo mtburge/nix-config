@@ -14,6 +14,8 @@
     ../user/waybar.nix
     ../user/vim.nix
     ../user/walker.nix
+    
+    ../user/nautilus.nix
   ];
 
   home.username = user.username;
