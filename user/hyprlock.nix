@@ -12,6 +12,7 @@
       hide_cursor = true
       no_fade_in = true
       no_fade_out = false
+      ignore_empty_input = true
     }
 
     background {
@@ -52,7 +53,6 @@
       color = rgba(200, 200, 200, .7)
       font_size = 18
       font_family = JetBrains Mono
-
       position = 0, 55
       halign = center
       valign = center
@@ -61,7 +61,7 @@
     input-field {
       monitor =
       size = 250, 50
-      outline_thickness = 0
+      outline_thickness = 1
       dots_size = 0.2 # Scale of input-field height, 0.2 - 0.8
       dots_spacing = 0.2 # Scale of dots' absolute size, 0.0 - 1.0
       dots_center = true
@@ -71,14 +71,14 @@
       font_color = rgb(200, 200, 200)
       fade_on_empty = false
       font_family = JetBrains Mono
-      fade_timeout = 1000 # Milliseconds before fade_on_empty is triggered.
+      fade_timeout = 500 # Milliseconds before fade_on_empty is triggered.
       placeholder_text = <span foreground="##9399b2">Password</span>
       hide_input = false
       rounding = 0.25 # -1 means complete rounding (circle/oval)
-      check_color = rgb(204, 136, 34)
-      fail_color = rgb(243, 139, 168) # if authentication failed, changes outer_color and fail message color
-      fail_text = <i>$FAIL <b>($ATTEMPTS)</b></i> # can be set to empty
-      fail_transition = 120
+      check_color = rgb(30, 30, 46)
+      fail_color = rgb(243, 139, 168)
+      fail_text =
+      fail_transition = 30
       capslock_color = -1
       numlock_color = -1
       bothlock_color = -1 # when both locks are active. -1 means don't change outer color (same for above)
