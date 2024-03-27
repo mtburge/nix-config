@@ -23,8 +23,8 @@
 
       env = [
         "XCURSOR_SIZE,24"
-        "GDK_SCALE,1.5"
-        "GDK_DPI_SCALE=,1.5"
+        "GDK_SCALE,2"
+        "GDK_DPI_SCALE=,2"
       ];
 
       misc = {
