@@ -8,6 +8,10 @@ let hibernateEnvironment = {
   };
 
 in {
+  environment.systemPackages = with pkgs; [
+    powertop
+  ];
+
   services.power-profiles-daemon.enable = true;
 
   services.logind = {
