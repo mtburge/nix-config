@@ -33,6 +33,9 @@
     loupe # image viewer
     vlc # video player
     gnome.nautilus # file manager
+  
+    lazygit
+    btop
   ];
 
   home.stateVersion = "23.11";
