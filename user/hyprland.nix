@@ -38,7 +38,7 @@
       exec-once = [
         "hypridle"
         "dunst"
-        "waybar"
+        "waybar & disown"
         "1password --silent"
         "hyprpaper"
         "blueman-applet &"
