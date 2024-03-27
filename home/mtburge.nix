@@ -14,8 +14,6 @@
     ../user/waybar.nix
     ../user/vim.nix
     ../user/walker.nix
-    
-    ../user/nautilus.nix
   ];
 
   home.username = user.username;
@@ -31,6 +29,10 @@
     htop
     nix-search-cli
     tree
+  
+    loupe # image viewer
+    vlc # video player
+    gnome.nautilus # file manager
   ];
 
   home.stateVersion = "23.11";
