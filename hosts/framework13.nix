@@ -20,7 +20,7 @@
   boot.initrd.kernelModules = [ "amdgpu" ];
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
-  boot.kernelParams = [ "mem_sleep_default=deep" "resume_offset=104388608" ];
+  boot.kernelParams = [ "resume_offset=104388608" ];
   boot.kernelPackages = pkgs.linuxPackages_6_8;
 
   boot.loader.systemd-boot.enable = true;
