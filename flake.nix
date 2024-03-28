@@ -1,7 +1,7 @@
 {
   description = "Matt's config";
 
-  outputs = { self, nixpkgs, home-manager, hyprland, hyprlock, hypridle, nur, unstable, walker, ...} @inputs:
+  outputs = { self, nixpkgs, home-manager, hyprland, hyprlock, hypridle, nur, unstable, walker, hyprland-contrib, ...} @inputs:
   
   let
     system = {
@@ -78,6 +78,11 @@
     nixsearch.url = "github:peterldowns/nix-search-cli";
     nur.url = "github:nix-community/NUR";
     walker.url = "github:abenz1267/walker";
+
+    hyprland-contrib = {
+      url = "github:hyprwm/contrib";
+      inputs.nixpkgs.follows = "nixpkgs";  
+    };
 
     home-manager = {
       url = "github:nix-community/home-manager/release-23.11";

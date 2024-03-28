@@ -3,7 +3,10 @@
 {
   home.packages = with pkgs; [
     hyprpicker
+    inputs.hyprland-contrib.packages.${pkgs.system}.grimblast
   ];
+
+  home.file."Screenshots/.keep".text = "";
 
   wayland.windowManager.hyprland = {
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
@@ -151,6 +154,10 @@
         ", xf86audioprev, exec, playerctl previous" 
         ", xf86monbrightnessup, exec, brightnessctl set 10%+" 
         ", xf86monbrightnessdown, exec, brightnessctl set 10%-" 
+      
+        # screenshots
+        ", Print, exec, grimblast --notify save output ~/Screenshots/$(date --iso-8601=seconds).png"
+        "$mod, Print, exec, grimblast --notify save area ~/Screenshots/$(date --iso-8601=seconds).png"
       ];
 
       binde = [
