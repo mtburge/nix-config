@@ -15,7 +15,7 @@
       username = "mtburge";
       name = "Matt Burgess";
       email = "hey@mtb.dev";
-      wallpaper = "~/.dotfiles/wallpapers/blobs-gnome.png";
+      wallpaper = "~/.dotfiles/user/wallpapers/blobs-gnome.png";
     };
 
     powermgmt = {
