@@ -13,7 +13,8 @@
     ../system/greetd.nix
     ../system/bluetooth.nix
 
-    ../system/1password.nix
+    ../system/apps/1password.nix
+    ../system/apps/home-manager.nix
   ];
   
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "thunderbolt" "usb_storage" "usbhid" "sd_mod" ];

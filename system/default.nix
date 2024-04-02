@@ -29,7 +29,6 @@
     vim
     neofetch
     git
-    home-manager
     kitty
     brightnessctl
     killall
