@@ -19,30 +19,16 @@
       on-resume = brightnessctl -r
     }
 
-    # keyboard backlight
-    listener {
-      timeout = ${powermgmt.soft_idle_seconds}
-      on-timeout = brightnessctl -sd rgb:kbd_backlight set 0
-      on-resume = brightnessctl -rd rgb:kbd_backlight
-    }
-
     # lock screen
     listener {
       timeout = ${powermgmt.lock_screen_seconds}
       on-timeout = loginctl lock-session
     }
-
-    # turn off screen
-    listener {
-      timeout = ${powermgmt.idle_seconds}
-      on-timeout = hyprctl dispatch dpms off
-      on-resume = hyprctl dispatch dpms on
-    }
-
+    
     # suspend
     listener {
       timeout = ${powermgmt.suspend_seconds}
-      on-timeout systemctl suspend
+      on-timeout = systemctl suspend-then-hibernate
     }
   '';
 }

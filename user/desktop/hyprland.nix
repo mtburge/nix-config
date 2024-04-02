@@ -39,7 +39,7 @@
       };
 
       exec-once = [
-        "hypridle"
+        "hypridle >> /tmp/hypridle.log"
         "dunst"
         "waybar & disown"
         "1password --silent"

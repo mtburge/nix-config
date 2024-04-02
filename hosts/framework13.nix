@@ -7,7 +7,6 @@
     ../system/swap.nix
     ../system/media.nix
     ../system/power.nix
-    ../system/udev.nix
     ../system/network.nix
     ../system/polkit.nix
     ../system/greetd.nix

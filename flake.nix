@@ -19,10 +19,9 @@
     };
 
     powermgmt = {
-      soft_idle_seconds = "180"; # idle seconds before dimming brightness, keyboard backlight
+      soft_idle_seconds = "180"; # idle seconds before dimming monitor brightness
       lock_screen_seconds = "300"; # idle seconds before locking the screen
-      idle_seconds = "330"; # idle seconds before turning off display
-      suspend_seconds = "1800"; # idle seconds before suspending system
+      suspend_seconds = "330"; # idle seconds before suspending system
     };
 
     pkgs = import nixpkgs {

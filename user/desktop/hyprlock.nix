@@ -29,8 +29,6 @@
       color = rgba(200, 200, 200, 1)
       font_size = 96
       font_family = JetBrains Mono
-      font_weight = bold
-      letter_spacing = 0.5
       position = 0, -220
       halign = center
       valign = top
@@ -70,11 +68,10 @@
       inner_color = rgb(69, 71, 90)
       font_color = rgb(200, 200, 200)
       fade_on_empty = false
-      font_family = JetBrains Mono
       fade_timeout = 500 # Milliseconds before fade_on_empty is triggered.
       placeholder_text = <span foreground="##9399b2">Password</span>
       hide_input = false
-      rounding = 0.25 # -1 means complete rounding (circle/oval)
+      rounding = -1 # -1 means complete rounding (circle/oval)
       check_color = rgb(30, 30, 46)
       fail_color = rgb(243, 139, 168)
       fail_text =
