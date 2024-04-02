@@ -158,6 +158,7 @@
         # screenshots
         ", Print, exec, grimblast --notify save output ~/Screenshots/$(date --iso-8601=seconds).png"
         "$mod, Print, exec, grimblast --notify save area ~/Screenshots/$(date --iso-8601=seconds).png"
+        "$mod SHIFT, Home, exec, grimblast --notify save area ~/Screenshots/$(date --iso-8601=seconds).png"
       ];
 
       binde = [
