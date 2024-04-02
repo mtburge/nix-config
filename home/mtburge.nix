@@ -2,7 +2,7 @@
 
 {
   imports = [
-    # RICE desktop environment
+    # desktop environment
     ../user/desktop
 
     # apps

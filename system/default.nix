@@ -4,9 +4,21 @@
   hardware.enableRedistributableFirmware = true;
 
   # Nix config
-  nix.settings.experimental-features = ["nix-command" "flakes"];
-  nixpkgs.hostPlatform = lib.mkDefault system.arch;
+  nix = {
+    settings = {
+      experimental-features = ["nix-command" "flakes"];
+      auto-optimise-store = true;
+    };
+    
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 30d";
+    };
+  };
   
+  nixpkgs.hostPlatform = lib.mkDefault system.arch;
+
   # i18n
   time.timeZone = system.timezone;
   i18n.defaultLocale = system.locale;
@@ -36,7 +48,7 @@
   ];
 
   programs.dconf.enable = true;
-
+  security.polkit.enable = true;
 
   xdg.portal = {
     enable = true;

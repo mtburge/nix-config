@@ -8,7 +8,6 @@
     ../system/media.nix
     ../system/power.nix
     ../system/network.nix
-    ../system/polkit.nix
     ../system/greetd.nix
     ../system/bluetooth.nix
 
@@ -57,7 +56,7 @@
     isNormalUser = true;
     group = "mtburge";
     initialPassword = "changeme";
-    extraGroups = [ "wheel" "audio" ]; 
+    extraGroups = [ "wheel" "audio" "networkmanager" ]; 
     packages = with pkgs; [];
   };
 
