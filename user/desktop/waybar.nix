@@ -68,6 +68,7 @@
       network = {
         format-wifi = "  {essid}";
         format-ethernet = " {ipaddr}/{cidr}";
+        format-disconnected = " No Network";
         tooltip-format-wifi = "{essid} ({signalStrength}%): {ipaddr}/{cidr}";
         tooltip-format-ethernet = "{ifname}: {ipaddr}/{cidr}";
         on-click = "exec nm-connection-editor";
