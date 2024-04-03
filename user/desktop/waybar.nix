@@ -143,6 +143,7 @@
       };
 
       battery = {
+        interval = 10;
         format = "{icon} {capacity}%";
         format-time = "{H}:{m}";
         format-discharging = "{icon} {time}";
