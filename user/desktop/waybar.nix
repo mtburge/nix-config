@@ -144,7 +144,10 @@
 
       battery = {
         format = "{icon} {capacity}%";
+        format-time = "{H}:{m}";
+        format-discharging = "{icon} {time}";
         format-icons = [" " " " " " " " " "];
+        tooltip-format = "{capacity}%: {timeTo}";
         states = {
           warning = 30;
           critical = 15;
