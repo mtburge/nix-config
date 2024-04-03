@@ -61,10 +61,10 @@
 
       general = {
         gaps_in = 8;
-        gaps_out = 32;
+        gaps_out = 12;
         border_size = 2;
         allow_tearing = false;
-        "col.active_border" = "0xFF7f849c";
+        "col.active_border" = "0xFF45475a";
         "col.inactive_border" = "0xFF313244";
       };
 
