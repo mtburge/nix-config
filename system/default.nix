@@ -41,12 +41,12 @@
     vim
     neofetch
     git
-    kitty
     brightnessctl
     killall
     xdg-utils
   ];
-
+  
+  programs.fish.enable = true;
   programs.dconf.enable = true;
   security.polkit.enable = true;
 

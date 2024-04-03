@@ -58,6 +58,7 @@
     initialPassword = "changeme";
     extraGroups = [ "wheel" "audio" "networkmanager" ]; 
     packages = with pkgs; [];
+    shell = pkgs.fish;
   };
 
   environment.systemPackages = with pkgs; [];
