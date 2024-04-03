@@ -146,7 +146,7 @@
         interval = 10;
         format = "{icon} {capacity}%";
         format-time = "{H}:{m}";
-        format-discharging = "{icon} {time}";
+        format-discharging = "{icon} {capacity}% ({time})";
         format-icons = [" " " " " " " " " "];
         tooltip-format = "{capacity}%: {timeTo}";
         states = {
