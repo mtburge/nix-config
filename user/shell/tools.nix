@@ -7,5 +7,6 @@
     btop
     lazygit
     nix-search-cli
+    dig
   ];
 }
