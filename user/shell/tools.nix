@@ -8,5 +8,6 @@
     lazygit
     nix-search-cli
     dig
+    gh
   ];
 }
