@@ -108,6 +108,7 @@
         "$mod, F, fullscreen"
         "$mod, Space, exec, walker"
         "$mod, B, exec, xdg-open about:home"
+        "$mod, P, exec, xdg-open https://chat.openai.com"
 
         # switch workspaces
         "$mod, 1, workspace, 1"
