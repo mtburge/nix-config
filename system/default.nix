@@ -50,6 +50,8 @@
   programs.dconf.enable = true;
   security.polkit.enable = true;
 
+  services.fwupd.enable = true;
+
   xdg.portal = {
     enable = true;
     config.common.default = "*";
