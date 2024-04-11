@@ -45,6 +45,7 @@
         "1password --silent"
         "hyprpaper"
         "blueman-applet &"
+        "nm-applet &"
         "walker --gapplication-service"
       ];
 
