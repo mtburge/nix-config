@@ -17,7 +17,7 @@
     ../user/shell/fish.nix
 
     # editors
-    ../user/editors/vim.nix
+    ../user/editors/nvim
   ];
 
   home.username = user.username;

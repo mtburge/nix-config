@@ -9,5 +9,7 @@
     nix-search-cli
     dig
     gh
+    unzip
+    tldr
   ];
 }
