@@ -2,6 +2,7 @@
 
 {
   home.packages = with pkgs; [
+    wget
     tree
     htop
     btop
