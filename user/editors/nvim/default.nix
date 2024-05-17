@@ -4,6 +4,7 @@
   home.packages = with pkgs; [
     gnumake
     ripgrep
+    fd
   ];
 
   programs.neovim = {
@@ -12,10 +13,6 @@
     vimAlias = true;
   };
 
-  home.file.".config/nvim/init.lua".source = config.lib.file.mkOutOfStoreSymlink ./init.lua;
-
-  home.file.".config/nvim/lua" = {
-    source = ./lua;
-    recursive = true;
-  };
+  home.file.".config/nvim/init.lua".source = config.lib.file.mkOutOfStoreSymlink "/home/mtburge/.dotfiles/user/editors/nvim/init.lua";
+  home.file.".config/nvim/lua".source = config.lib.file.mkOutOfStoreSymlink "/home/mtburge/.dotfiles/user/editors/nvim/lua/";
 }
