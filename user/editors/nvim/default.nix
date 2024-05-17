@@ -5,6 +5,7 @@
     gnumake
     ripgrep
     fd
+    gcc
   ];
 
   programs.neovim = {
