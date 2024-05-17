@@ -71,7 +71,7 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.11";
     unstable.url = "nixpkgs/nixos-unstable";
-    hyprland.url = "github:hyprwm/Hyprland";
+    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
     hyprlock.url = "github:hyprwm/Hyprlock";
     hypridle.url = "github:hyprwm/Hypridle";
     nixsearch.url = "github:peterldowns/nix-search-cli";
