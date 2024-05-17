@@ -4,6 +4,7 @@
   home.packages = with pkgs; [
     hyprpicker
     inputs.hyprland-contrib.packages.${pkgs.system}.grimblast
+    wl-clipboard
   ];
 
   home.file."Screenshots/.keep".text = "";

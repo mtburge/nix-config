@@ -44,6 +44,8 @@
     brightnessctl
     killall
     xdg-utils
+    libdisplay-info
+    libliftoff    
   ];
   
   programs.fish.enable = true;
