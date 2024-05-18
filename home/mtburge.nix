@@ -18,9 +18,6 @@
 
     # editors
     ../user/editors/nvim
-
-    # languages
-    ../user/lang/python.nix
   ];
 
   home.username = user.username;
